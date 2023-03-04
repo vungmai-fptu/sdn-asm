@@ -1,0 +1,16 @@
+extends layout block content h1= message h2= error.status pre #{error.stack}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Error</title>
+</head>
+
+<body>
+    <h1>An error has occurred</h1>
+    <p>
+        <%= error %>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Player</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <form action="/players/<%= player._id %>?_method=PUT" method="POST">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="name" value="<%= player.name %>" />
+                </div>
+            </div>
+    
+            <div class="field">
+                <label class="label">Image URL</label>
+                <div class="control">
+                    <input class="input" type="text" name="image" value="<%= player.image %>" />
+                </div>
+            </div>
+    
+            <div class="field">
+                <label class="label">Club</label>
+                <div class="control">
+                    <input class="input" type="text" name="club" value="<%= player.club %>" />
+                </div>
+            </div>
+    
+            <div class="field">
+                <label class="label">Position</label>
+                <div class="control">
+                    <input class="input" type="text" name="position" value="<%= player.position %>" />
+                </div>
+            </div>
+    
+            <div class="field">
+                <label class="label">Goals</label>
+                <div class="control">
+                    <input class="input" type="number" name="goals" value="<%= player.goals %>" />
+                </div>
+            </div>
+    
+            <div class="field">
+                <label class="checkbox">
+                    <input type="checkbox" name="isCaptain" <%=player.isCaptain ? "checked" : "" %>> Is Captain
+                </label>
+            </div>
+    
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary" type="submit">Update</button>
+                </div>
+                <div class="control">
+                    <a href="/players" class="button is-light">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
